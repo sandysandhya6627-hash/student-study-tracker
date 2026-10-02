@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Study Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div>
+            <h1>📚 Student Study Tracker</h1>
+            <p>Organize your study tasks and track your progress.</p>
+        </div>
+        <button id="clearAllBtn" class="danger-btn">Clear All</button>
+    </header>
+    <main class="container">
+        <section class="stats">
+            <div class="stat-card"><span id="totalTasks">0</span><small>Total Tasks</small></div>
+            <div class="stat-card"><span id="completedTasks">0</span><small>Completed</small></div>
+            <div class="stat-card"><span id="pendingTasks">0</span><small>Pending</small></div>
+            <div class="stat-card"><span id="progressPercent">0%</span><small>Progress</small></div>
+        </section>
+        <section class="panel">
+            <h2>Add Study Task</h2>
+            <form id="taskForm">
+                <div class="form-grid">
+                    <input id="taskInput" type="text" placeholder="Enter task, e.g. Study Data Structures" required>
+                    <input id="subjectInput" type="text" placeholder="Subject, e.g. C Programming" required>
+                    <input id="dateInput" type="date">
+                    <select id="priorityInput">
+                        <option value="Low">Low Priority</option>
+                        <option value="Medium" selected>Medium Priority</option>
+                        <option value="High">High Priority</option>
+                    </select>
+                </div>
+                <button class="primary-btn" type="submit">+ Add Task</button>
+            </form>
+        </section>
+        <section class="panel">
+            <div class="task-header">
+                <h2>My Tasks</h2>
+                <select id="filterSelect">
+                    <option value="all">All Tasks</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            <div id="taskList" class="task-list"></div>
+            <p id="emptyMessage" class="empty">No tasks yet. Add your first study task!</p>
+        </section>
+    </main>
+    <footer><p>Student Study Tracker • Built with HTML, CSS & JavaScript</p></footer>
+    <script src="script.js"></script>
+</body>
+</html>
